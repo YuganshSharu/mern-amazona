@@ -11,12 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-header {
-  background-color: #404040;
-  padding: 1rem;
+.site-container {
+  min-height: 100vh;
 }
-header > a {
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+main {
+  flex: 1;
+}
+.btn-primary {
+  background-color: #f0c040 !important;
+  color: #000000 !important;
+}
+.rating span {
+  color: #ffc000;
 }
