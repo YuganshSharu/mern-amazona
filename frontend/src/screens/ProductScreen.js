@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
@@ -45,6 +45,7 @@ function ProductScreen() {
     };
     fetchData();
   }, [slug]);
+  const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart } = state;
   const addToCartHandler = async () => {
@@ -57,6 +58,7 @@ function ProductScreen() {
       return;
     }
     ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
+    navigate('/cart');
   };
   return loading ? (
     <LoadingBox />
