@@ -19,7 +19,7 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
+//Temp
 function ProfileScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
